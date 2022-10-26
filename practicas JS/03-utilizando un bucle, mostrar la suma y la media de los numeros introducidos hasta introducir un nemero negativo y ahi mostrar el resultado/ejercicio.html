@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>03-utilizando un bucle, mostrar la suma y la media de los numeros introducidos hasta introducir un nemero negativo y ahi mostrar el resultado</title>
+</head>
+<body>
+	<div class="encabezado">
+		03-utilizando un bucle, mostrar la suma y la media de los numeros introducidos hasta introducir un nemero negativo y ahi mostrar el resultado
+	</div>
+	<form>
+		<input type="text" id="input1">
+		<input type="submit" value="Enviar" id="enviar">
+		<div id="resultado"> Resultado... </div>
+	</form>
+
+<!---------------------------ESTILOS--------------------------->
+	<style type="text/css">
+		.encabezado{
+			margin: auto;
+			padding: 20px;
+			width: 80%;
+			background: #aaa;
+			border-radius: 10px;
+			border: black 3px solid ;
+		}
+		body {
+			background: #2C5C0E;
+		}
+		form{
+		  justify-content: center;
+		  align-items: center;
+		}
+		input{
+			margin: 10px;
+			padding: 10px;
+			background: #aaa;
+			border-radius: 7px;
+			border-color: #000;
+		}
+		#resultado {
+			margin: auto;
+			padding: 20px;
+			width: 80%;
+			height: 200px;
+			background: #aaa;
+			border-radius: 10px;
+		}		
+	</style>
+<!---------------------------ESTILOS--------------------------->
+
+<!---------------------------JAVASCRIPT--------------------------->
+
+	<script type="text/javascript">
+		const input1 = document.querySelector('#input1');
+		const form = document.querySelector('form');
+		const enviar = document.querySelector('#enviar');
+		const resultado = document.querySelector('#resultado');
+
+		let array = [];
+		let total = 0;
+
+		enviar.addEventListener('click', (e)=>{
+			e.preventDefault();
+
+		if( Number(input1.value) < 1){
+			for (let i = 0; i < array.length; i++) {
+				total = total + array[i];
+			}
+			resultado.innerText = total;
+			input1.value = '';
+			array = [];
+		}else {
+			array.push( Number(input1.value) );
+			input1.value = '';
+		}
+		
+		console.log( array )
+
+
+			
+
+			
+		})
+
+
+
+
+		
+	</script>
+<!---------------------------JAVASCRIPT--------------------------->
+
+</body>
+</html>

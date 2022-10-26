@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>01-programa que pide un numero y comprueba cual es menor o si son iguales</title>
+</head>
+<body>
+	<div class="encabezado">
+		01-programa que pide un numero y comprueba cual es menor o si son iguales
+	</div>
+	<form>
+		<input type="number" id="input1">
+		<input type="number" id="input2">
+		<input type="submit" value="Enviar" id="enviar">
+		<div id="resultado"> Resultado... </div>
+	</form>
+
+
+
+
+
+<!---------------------------ESTILOS--------------------------->
+	<style type="text/css">
+		.encabezado{
+			margin: auto;
+			padding: 20px;
+			width: 80%;
+			background: #aaa;
+			border-radius: 10px;
+			border: black 3px solid ;
+		}
+		body {
+			background: #2C5C0E;
+		}
+		form{
+		  justify-content: center;
+		  align-items: center;
+		}
+		input{
+			margin: 10px;
+			padding: 10px;
+			background: #aaa;
+			border-radius: 7px;
+			border-color: #000;
+		}
+		#resultado {
+			margin: auto;
+			padding: 20px;
+			width: 80%;
+			height: 200px;
+			background: #aaa;
+			border-radius: 10px;
+		}
+		
+	</style>
+<!---------------------------ESTILOS--------------------------->
+
+
+
+
+
+
+<!---------------------------JAVASCRIPT--------------------------->
+
+	<script type="text/javascript">
+		const input1 = document.querySelector('#input1');
+		const input2 = document.querySelector('#input2');
+		const form = document.querySelector('form');
+		const enviar = document.querySelector('#enviar');
+		const resultado = document.querySelector('#resultado');
+
+		enviar.addEventListener('click', (e)=>{
+			e.preventDefault();
+			if( parseInt(input1.value) > parseInt(input2.value) ){
+				resultado.innerText = 'El numero ' + input1.value + ' del input 1 es mayor';
+			}else if ( parseInt(input1.value) == parseInt(input2.value) ){
+				resultado.innerText = 'Ambos numeros son iguales';
+			}else {
+				resultado.innerText = 'El numero ' + input2.value + ' del input 2 es mayor';
+			}
+		})
+
+
+
+
+		
+	</script>
+<!---------------------------JAVASCRIPT--------------------------->
+
+</body>
+</html>

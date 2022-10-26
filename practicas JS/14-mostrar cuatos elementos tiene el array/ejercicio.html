@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>13-ordenar array en forma descendente</title>
+</head>
+<body>
+	<div class="encabezado">
+		13-ordenar array en forma descendente
+	</div>
+	<form>
+		<input type="text" id="input1">
+		<input type="submit" value="Enviar a array" id="enviar">
+
+		<div id="resultado"> Resultado... </div>
+	</form>
+
+<!---------------------------ESTILOS--------------------------->
+	<style type="text/css">
+		.encabezado{
+			margin: auto;
+			padding: 20px;
+			width: 80%;
+			background: #aaa;
+			border-radius: 10px;
+			border: black 3px solid ;
+		}
+		body {
+			background: #2C5C0E;
+		}
+		form{
+		  justify-content: center;
+		  align-items: center;
+		}
+		input{
+			margin: 10px;
+			padding: 10px;
+			background: #aaa;
+			border-radius: 7px;
+			border-color: #000;
+		}
+		#resultado {
+			margin: auto;
+			padding: 20px;
+			width: 80%;
+			height: 200px;
+			background: #aaa;
+			border-radius: 10px;
+		}		
+	</style>
+<!---------------------------ESTILOS--------------------------->
+
+<!---------------------------JAVASCRIPT--------------------------->
+
+	<script type="text/javascript">
+		const input1 = document.querySelector('#input1');
+		const input2 = document.querySelector('#input2');
+		const form = document.querySelector('form');
+		const enviar = document.querySelector('#enviar');
+		const resultado = document.querySelector('#resultado');
+		const reset = ()=>{
+			input1.value = '';
+		}
+
+		let array = [];
+
+		
+
+
+
+		enviar.addEventListener('click', (e)=>{
+			e.preventDefault();
+			
+			if( array.length < 6 && input1.value >= 1){
+				array.push(Number(input1.value));
+				reset();
+			}
+			array.sort(function(a, b) {
+			  	return a - b;
+			});
+			console.log(array.length);
+			resultado.innerText = array + '                 :El array tiene '+ array.length + ' elementos.';
+
+
+
+		});
+	
+
+
+
+
+		
+	</script>
+<!---------------------------JAVASCRIPT--------------------------->
+
+</body>
+</html>
+

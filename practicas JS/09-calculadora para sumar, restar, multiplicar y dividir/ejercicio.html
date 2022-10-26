@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>09-calculadora para sumar, restar, multiplicar y dividir</title>
+</head>
+<body>
+	<div class="encabezado">
+		09-calculadora para sumar, restar, multiplicar y dividir
+	</div>
+	<form>
+		<input type="text" id="input1">
+		<input type="text" id="input2">
+		<input type="submit" value="Sumar" id="suma">
+		<input type="submit" value="Restar" id="resta">
+		<input type="submit" value="Multiplicar" id="multiplicacion">
+		<input type="submit" value="Dividir" id="division">
+
+		<div id="resultado"> Resultado... </div>
+	</form>
+
+<!---------------------------ESTILOS--------------------------->
+	<style type="text/css">
+		.encabezado{
+			margin: auto;
+			padding: 20px;
+			width: 80%;
+			background: #aaa;
+			border-radius: 10px;
+			border: black 3px solid ;
+		}
+		body {
+			background: #2C5C0E;
+		}
+		form{
+		  justify-content: center;
+		  align-items: center;
+		}
+		input{
+			margin: 10px;
+			padding: 10px;
+			background: #aaa;
+			border-radius: 7px;
+			border-color: #000;
+		}
+		#resultado {
+			margin: auto;
+			padding: 20px;
+			width: 80%;
+			height: 200px;
+			background: #aaa;
+			border-radius: 10px;
+		}		
+	</style>
+<!---------------------------ESTILOS--------------------------->
+
+<!---------------------------JAVASCRIPT--------------------------->
+
+	<script type="text/javascript">
+		const input1 = document.querySelector('#input1');
+		const input2 = document.querySelector('#input2');
+		const form = document.querySelector('form');
+		const suma = document.querySelector('#suma');
+		const resta = document.querySelector('#resta');
+		const multiplicacion = document.querySelector('#multiplicacion');
+		const division = document.querySelector('#division');
+		const resultado = document.querySelector('#resultado');
+
+		const reset = ()=>{
+			input1.value = '';
+			input2.value = '';
+		}
+
+		const suma1 = (  ) =>{
+			const resp = Number(input1.value)  + Number(input2.value);
+			resultado.innerHTML = resp;
+			reset();
+		}
+		const resta1 = (  ) =>{
+			const resp = Number(input1.value) - Number(input2.value);
+			resultado.innerHTML = resp;
+			reset();
+		}
+		const multiplicacion1 = (  ) =>{
+			const resp = Number(input1.value) * Number(input2.value);
+			resultado.innerHTML = resp;
+			reset();
+		}
+		const division1 = (  ) =>{
+			const resp = Number(input1.value) / Number(input2.value);
+			resultado.innerHTML = resp;
+			reset();
+		}
+
+
+
+		suma.addEventListener('click', (e)=>{
+			e.preventDefault();
+			suma1();
+		});
+		resta.addEventListener('click', (e)=>{
+			e.preventDefault();
+			resta1();
+		});
+		multiplicacion.addEventListener('click', (e)=>{
+			e.preventDefault();
+			multiplicacion1();
+		});
+		division.addEventListener('click', (e)=>{
+			e.preventDefault();
+			division1();
+		});
+
+
+
+
+		
+	</script>
+<!---------------------------JAVASCRIPT--------------------------->
+
+</body>
+</html>
+
